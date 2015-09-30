@@ -1,4 +1,5 @@
-$(document).ready(function() {
+var app = angular.module('myApp', []);
+app.controller('mathGameCtrl', function($scope) {
     var canvas = document.querySelector("#myCanvas");
     var context = canvas.getContext("2d");
 
@@ -20,5 +21,13 @@ $(document).ready(function() {
     // line color
     context.strokeStyle = 'black';
     context.stroke();
+    $scope.angle = angleDegrees;
+    $scope.angleguess = 0;
+    if ($scope.angleguess == 0) {
+        $scope.diff = '';
+    } else {
+        $scope.diff = angleDegrees - $scope.angleguess;
+    }
     console.log(angleDegrees);
+    console.log($scope.angleguess);
 });

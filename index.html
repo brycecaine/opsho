@@ -1,17 +1,19 @@
 <!doctype html>
-<html ng-app>
+<html>
     <head>
         <title>Math Games</title>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
-        <script src="opsho.js"></script>
+        <!-- script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script -->
+        <script src="mathGameController.js"></script>
     </head>
     <body>
-        <div>
-            Guess the angle:
-            <input type="text" ng-model="angle" />
-            Your guess {{ angle }}
+        <div ng-app="myApp" ng-controller="mathGameCtrl">
+            <div>
+                Guess the angle:
+                <input type="text" ng-model="angleguess" />
+                Difference {{ diff }}
+            </div>
+            <canvas id="myCanvas" width="700" height="700"></canvas>
         </div>
-        <canvas id="myCanvas" width="700" height="700"></canvas>
     </body>
 </html>
